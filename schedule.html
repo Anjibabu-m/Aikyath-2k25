@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>College Fest 2025 - Schedule</title>
+    <title>AIKYATH 2K25 - Schedule</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -17,56 +17,66 @@
         }
 
         header {
-            background: rgba(51, 51, 51, 0.8);
+            background: rgba(0, 0, 0, 0.8);
             color: white;
-            padding: 20px;
+            padding: 30px 20px;
+            text-align: center;
             border-bottom: 5px solid #ff6f61;
         }
-        
+
         header h1 {
-            margin: 0;
-            font-size: 3em;
+            font-size: 4rem;
+            font-weight: bold;
             background: linear-gradient(90deg, #ff6f61, #ffcc00, #6a1b9a, #00bcd4, #76ff03);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: inline-block;
-            animation: gradientAnimation 3s infinite;
         }
-        
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+
+        nav {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 15px 0;
         }
 
         nav ul {
             list-style: none;
             padding: 0;
+            margin: 0;
             text-align: center;
-            margin: 10px 0;
         }
+
         nav ul li {
-            display: inline;
-            margin: 0 20px;
+            display: inline-block;
+            margin: 0 15px;
+            padding: 12px 25px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            transition: all 0.3s ease-in-out;
         }
+
         nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: bold;
             font-size: 1.2em;
-            transition: color 0.3s ease;
+            display: block;
         }
-        nav ul li a:hover {
-            color: #ffcc00;
+
+        nav ul li:hover {
+            background: #ffcc00;
+        }
+
+        nav ul li:hover a {
+            color: #000;
         }
 
         .schedule {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 20px;
-            margin: 20px auto;
             width: 80%;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
             border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
             color: #333;
         }
 
@@ -75,21 +85,24 @@
             border-collapse: collapse;
             margin-top: 20px;
         }
+
         th, td {
             border: 1px solid #ddd;
             padding: 12px;
             text-align: left;
         }
+
         th {
             background-color: #ff6f61;
             color: white;
         }
-        
+
         footer {
-            background: rgba(51, 51, 51, 0.8);
+            text-align: center;
+            padding: 15px;
+            background: rgba(51, 51, 51, 0.9);
             color: white;
-            padding: 10px;
-            position: relative;
+            position: fixed;
             bottom: 0;
             width: 100%;
             border-top: 3px solid #ff6f61;
@@ -99,16 +112,17 @@
 <body>
     <header>
         <h1>AIKYATH 2K25 - Schedule</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="schedule.html">Schedule</a></li>
-                <li><a href="register.html">Register</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
     </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
     <section class="schedule">
         <h2>Event Schedule</h2>

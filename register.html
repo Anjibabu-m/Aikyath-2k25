@@ -17,49 +17,80 @@
         }
 
         header {
-            background: rgba(51, 51, 51, 0.8);
+            background: rgba(0, 0, 0, 0.8);
             color: white;
-            padding: 20px;
+            padding: 30px 20px;
+            text-align: center;
             border-bottom: 5px solid #ff6f61;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            background: linear-gradient(90deg, #ff6f61, #ffcc00, #6a1b9a, #00bcd4, #76ff03);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 10px 0;
         }
 
         nav ul {
             list-style: none;
             padding: 0;
-            text-align: center;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
         }
+
         nav ul li {
-            display: inline;
-            margin: 0 20px;
+            margin: 5px 10px;
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            transition: all 0.3s ease-in-out;
         }
+
         nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.2em;
-            transition: color 0.3s ease;
+            display: block;
         }
-        nav ul li a:hover {
-            color: #ffcc00;
+
+        nav ul li:hover {
+            background: #ffcc00;
+        }
+
+        nav ul li:hover a {
+            color: #000;
         }
 
         .registration-form {
-            width: 50%;
-            margin: 20px auto;
+            width: 90%;
+            max-width: 500px;
+            margin: 30px auto;
             background: rgba(255, 255, 255, 0.9);
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             color: #333;
         }
+
         .form-group {
             margin-bottom: 15px;
             text-align: left;
         }
+
         .form-group label {
             display: block;
             font-weight: bold;
         }
+
         .form-group input, .form-group select, .form-group textarea {
             width: 100%;
             padding: 8px;
@@ -67,6 +98,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
+
         .form-group button {
             background: #ff6f61;
             color: white;
@@ -75,7 +107,9 @@
             cursor: pointer;
             border-radius: 5px;
             font-size: 1em;
+            width: 100%;
         }
+
         .form-group button:hover {
             background: #e64a45;
         }
@@ -85,10 +119,22 @@
             padding: 15px;
             background: rgba(51, 51, 51, 0.8);
             color: white;
-            position: fixed;
-            bottom: 0;
             width: 100%;
             border-top: 3px solid #ff6f61;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            .registration-form {
+                width: 95%;
+            }
         }
     </style>
 </head>
@@ -113,17 +159,14 @@
                 <label for="name">Full Name:</label>
                 <input type="text" id="name" name="name" required>
             </div>
-
             <div class="form-group">
                 <label for="email">Email Address:</label>
                 <input type="email" id="email" name="email" required>
             </div>
-
             <div class="form-group">
                 <label for="phone">Phone Number:</label>
                 <input type="tel" id="phone" name="phone" required>
             </div>
-
             <div class="form-group">
                 <label for="event">Select Event:</label>
                 <select id="event" name="event" required>
@@ -135,12 +178,6 @@
                     <option value="debate">Debate Competition</option>
                 </select>
             </div>
-
-            <div class="form-group">
-                <label for="comments">Additional Comments:</label>
-                <textarea id="comments" name="comments" rows="4"></textarea>
-            </div>
-
             <div class="form-group">
                 <button type="submit">Register</button>
             </div>
@@ -148,21 +185,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 College Fest. All rights reserved.</p>
+        <p>&copy; 2025 AIKYATH 2K25. All rights reserved.</p>
     </footer>
-
-    <script>
-        document.getElementById('registrationForm').addEventListener('submit', function(event) {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const eventSelected = document.getElementById('event').value;
-
-            if (!name || !email || !phone || !eventSelected) {
-                alert('Please fill out all required fields.');
-                event.preventDefault();
-            }
-        });
-    </script>
 </body>
 </html>

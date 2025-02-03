@@ -9,7 +9,7 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, rgba(255, 111, 97, 0.8), rgba(255, 204, 0, 0.8), rgba(106, 27, 154, 0.8), rgba(0, 188, 212, 0.8), rgba(76, 175, 80, 0.8)), 
+            background: linear-gradient(135deg, rgba(255, 111, 97, 0.8), rgba(255, 204, 0, 0.8), rgba(106, 27, 154, 0.8), rgba(0, 188, 212, 0.8), rgba(76, 175, 80, 0.8)),
                         url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
             background-size: cover;
             color: #fff;
@@ -17,89 +17,70 @@
         }
 
         header {
-            background: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
+            background: rgba(0, 0, 0, 0.8);
             color: white;
             padding: 20px;
+            text-align: center;
             border-bottom: 5px solid #ff6f61;
         }
 
         header h1 {
-            margin: 0;
-            font-size: 3em; /* Increased font size */
+            font-size: 3rem;
+            font-weight: bold;
             background: linear-gradient(90deg, #ff6f61, #ffcc00, #6a1b9a, #00bcd4, #76ff03);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: inline-block;
-            animation: gradientAnimation 3s infinite;
         }
 
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        nav {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 10px 0;
         }
 
         nav ul {
             list-style: none;
             padding: 0;
+            margin: 0;
             text-align: center;
-            margin: 10px 0;
         }
+
         nav ul li {
-            display: inline;
-            margin: 0 20px;
+            display: inline-block;
+            margin: 5px;
         }
+
         nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.2em;
-            transition: color 0.3s ease;
-        }
-        nav ul li a:hover {
-            color: #ffcc00; /* Hover effect */
-        }
-
-        section {
-            width: 80%;
-            margin: 20px auto;
-            background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
-            padding: 20px;
+            font-size: 1.1em;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            color: #333;
+            display: inline-block;
+            transition: all 0.3s ease-in-out;
         }
 
-        section h2 {
-            color: #ff6f61; /* Vibrant color for section headings */
-        }
-
-        footer {
-            text-align: center;
-            padding: 15px;
-            background: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
-            color: white;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            border-top: 3px solid #ff6f61;
-        }
-        footer p {
-            margin: 0;
+        nav ul li a:hover {
+            background: #ffcc00;
+            color: #000;
         }
 
         .contact-info, .contact-form {
-            width: 80%;
+            width: 90%;
+            max-width: 600px;
             margin: 20px auto;
-            background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            background: rgba(255, 255, 255, 0.9);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
             color: #333;
+            text-align: left;
         }
 
         .contact-info h2, .contact-form h2 {
-            color: #ff6f61; /* Vibrant color for section headings */
+            color: #ff6f61;
         }
 
         .contact-info ul {
@@ -113,7 +94,6 @@
 
         .form-group {
             margin-bottom: 15px;
-            text-align: left;
         }
 
         label {
@@ -132,7 +112,7 @@
         }
 
         button {
-            background: #ff6f61; /* Vibrant button color */
+            background: #ff6f61;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -143,7 +123,34 @@
         }
 
         button:hover {
-            background: #e65a50; /* Hover effect */
+            background: #e65a50;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: rgba(51, 51, 51, 0.8);
+            color: white;
+            border-top: 3px solid #ff6f61;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            nav ul li a {
+                font-size: 1em;
+                padding: 8px 15px;
+            }
+            .contact-info, .contact-form {
+                width: 95%;
+            }
+            input, textarea {
+                font-size: 0.9em;
+            }
+            button {
+                font-size: 0.9em;
+            }
         }
     </style>
 </head>
@@ -183,10 +190,6 @@
                 <input type="email" id="email" name="email" required>
             </div>
             <div class="form-group">
-                <label for="subject">Subject:</label>
-                <input type="text" id="subject" name="subject" required>
-            </div>
-            <div class="form-group">
                 <label for="message">Your Message:</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
             </div>
@@ -199,18 +202,5 @@
     <footer>
         <p>&copy; 2025 College Fest. All rights reserved.</p>
     </footer>
-
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            if (!name || !email || !subject || !message) {
-                alert('Please fill out all required fields.');
-                event.preventDefault();
-            }
-        });
-    </script>
 </body>
 </html>

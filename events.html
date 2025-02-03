@@ -9,46 +9,48 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, rgba(255, 111, 97, 0.8), rgba(255, 204, 0, 0.8), rgba(106, 27, 154, 0.8), rgba(0, 188, 212, 0.8), rgba(76, 175, 80, 0.8)), 
-                        url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
-            background-size: cover;
+            background: linear-gradient(135deg, rgba(255, 111, 97, 0.8), rgba(255, 204, 0, 0.8), rgba(106, 27, 154, 0.8), rgba(0, 188, 212, 0.8), rgba(76, 175, 80, 0.8));
             color: #fff;
             text-align: center;
         }
 
         header {
-            background: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
+            background: rgba(0, 0, 0, 0.8);
             color: white;
             padding: 20px;
+            text-align: center;
             border-bottom: 5px solid #ff6f61;
         }
 
         header h1 {
-            margin: 0;
-            font-size: 3em; /* Increased font size */
+            font-size: 3rem;
+            font-weight: bold;
             background: linear-gradient(90deg, #ff6f61, #ffcc00, #6a1b9a, #00bcd4, #76ff03);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: inline-block;
-            animation: gradientAnimation 3s infinite;
         }
 
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        nav {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 10px 0;
         }
 
         nav ul {
             list-style: none;
             padding: 0;
-            text-align: center;
-            margin: 10px 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         nav ul li {
-            display: inline;
-            margin: 0 20px;
+            margin: 10px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            transition: all 0.3s ease-in-out;
         }
 
         nav ul li a {
@@ -56,17 +58,22 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 1.2em;
-            transition: color 0.3s ease;
+            display: block;
         }
 
-        nav ul li a:hover {
-            color: #ffcc00; /* Hover effect */
+        nav ul li:hover {
+            background: #ffcc00;
+        }
+
+        nav ul li:hover a {
+            color: #000;
         }
 
         .events-list {
-            width: 80%;
+            width: 90%;
+            max-width: 800px;
             margin: 20px auto;
-            background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            background: rgba(255, 255, 255, 0.95);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -79,21 +86,32 @@
             margin: 15px 0;
             border-left: 5px solid #28a745;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
         }
 
         footer {
             text-align: center;
             padding: 15px;
-            background: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
+            background: rgba(51, 51, 51, 0.8);
             color: white;
-            position: fixed;
-            bottom: 0;
+            position: relative;
             width: 100%;
             border-top: 3px solid #ff6f61;
+            margin-top: 20px;
         }
 
-        footer p {
-            margin: 0;
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            .events-list {
+                width: 95%;
+                padding: 15px;
+            }
         }
     </style>
 </head>
@@ -113,41 +131,33 @@
 
     <section class="events-list">
         <h2>Event List</h2>
-
-        <!-- Event 1 -->
         <div class="event">
             <h3>Dance Competition</h3>
             <p><strong>Date:</strong> February 20, 2025</p>
             <p><strong>Time:</strong> 10:00 AM - 12:00 PM</p>
-            <p><strong>Venue:</strong> Mca Block</p>
-            <p><strong>Description:</strong> Show off your dance moves in solo or group performances. Prizes for the best dancers!</p>
+            <p><strong>Venue:</strong> MCA Block</p>
+            <p><strong>Description:</strong> Show off your dance moves in solo or group performances!</p>
         </div>
-
-        <!-- Event 2 -->
         <div class="event">
             <h3>Singing Competition</h3>
             <p><strong>Date:</strong> February 20, 2025</p>
             <p><strong>Time:</strong> 2:00 PM - 4:00 PM</p>
-            <p><strong>Venue:</strong> Mca Block</p>
-            <p><strong>Description:</strong> Sing your heart out in solo or duet performances. All genres are welcome!</p>
+            <p><strong>Venue:</strong> MCA Block</p>
+            <p><strong>Description:</strong> Sing your heart out in solo or duet performances!</p>
         </div>
-
-        <!-- Event 3 -->
         <div class="event">
             <h3>Tech Quiz</h3>
             <p><strong>Date:</strong> February 20, 2025</p>
             <p><strong>Time:</strong> 11:00 AM - 1:00 PM</p>
-            <p><strong>Venue:</strong> Mca Block</p>
-            <p><strong>Description:</strong> Test your knowledge of technology and win exciting prizes!</p>
+            <p><strong>Venue:</strong> MCA Block</p>
+            <p><strong>Description:</strong> Test your knowledge of technology!</p>
         </div>
-
-        <!-- Event 4 -->
         <div class="event">
             <h3>Treasure Hunt</h3>
             <p><strong>Date:</strong> February 20, 2025</p>
             <p><strong>Time:</strong> 9:00 AM - 11:00 AM</p>
             <p><strong>Venue:</strong> College Campus</p>
-            <p><strong>Description:</strong> Solve clues and find hidden treasures across the campus. Team event!</p>
+            <p><strong>Description:</strong> Solve clues and find hidden treasures across the campus!</p>
         </div>
     </section>
 
